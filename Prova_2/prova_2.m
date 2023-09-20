@@ -43,4 +43,4 @@ for i = 1 : 6
 end
 
 pmfXY_sim = histXY / N
-PmfXY_teo =[]] ;
+PmfXY_teo =[] ;
