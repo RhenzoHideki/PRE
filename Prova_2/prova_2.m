@@ -44,3 +44,48 @@ end
 
 pmfXY_sim = histXY / N
 PmfXY_teo =[] ;
+
+
+% b) PMFs marginais de X e Y
+
+pmfX_sim = hist(X, x) / N;
+%pmfX_teo = [1/27 3/27 6/27 7/27 6/27 3/27 1/27];
+
+pmfY_sim = hist(Y, y) / N;
+%pmfY_teo = pmfX_teo;
+
+figure;
+subplot(2, 2, 1); hold on; grid on;
+bar(x, pmfX_sim, 'y');
+%stem(x, pmfX_teo, 'b', 'LineWidth', 4);
+xlabel('x'); ylabel('p_X(x)');
+
+subplot(2, 2, 2); hold on; grid on;
+bar(y, pmfY_sim, 'y');
+%stem(y, pmfY_teo, 'b', 'LineWidth', 4);
+xlabel('y'); ylabel('p_Y(y)');
+
+
+% c) PMFs condicionais de X dado que Y = y, para y ∈ {-2, 1}
+
+pmfX_condY_sim = zeros(2, 7);
+
+XcondY = X(Y == -2);
+pmfX_condY_sim(1, :) = hist(XcondY, x) / sum(Y == -2);
+
+XcondY = X(Y == 1);
+pmfX_condY_sim(2, :) = hist(XcondY, x) / sum(Y == 1);
+
+%pmfX_condY_teo = [0  0  1  0  0  0  0;
+%                  0 2/7 0 3/7 0 2/7 0];
+                  
+subplot(2, 2, 3); hold on; grid on;
+bar(x, pmfX_condY_sim(1, :), 'y');
+%stem(x, pmfX_condY_teo(1, :), 'b', 'LineWidth', 4);
+xlabel('x'); ylabel(sprintf('p_X(x | Y = -2)'));
+
+subplot(2, 2, 4); hold on; grid on;
+bar(x, pmfX_condY_sim(2, :), 'y');
+%stem(x, pmfX_condY_teo(2, :), 'b', 'LineWidth', 4);
+xlabel('x'); ylabel(sprintf('p_X(x | Y = 1)'));
+  
