@@ -27,17 +27,17 @@ for i = 1 : N
   U3 = A(idx);          % Descobrindo se o U3 está em 0, 1 ou 2
   
   X(i) = U1 + U2 + U3;  % Definicao do X
-  Y(i) = U1(U2 + U3);  % Definicao do Y
+  Y(i) = U1*(U2 + U3);  % Definicao do Y
 end
 
 x = 0: 1 :6;
 y = 0: 1 :8;
 
 
-histXY = zeros(7, 7);
+histXY = zeros(9, 9);
 
-for i = 1 : 6
-  for j = 1 : 8
+for i = 1 : 7
+  for j = 1 : 9
     histXY(i, j) = sum(X == x(i) & Y == y(j));
   end
 end
