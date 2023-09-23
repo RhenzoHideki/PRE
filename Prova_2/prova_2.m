@@ -1,4 +1,4 @@
-%Rhenzo Hideki Silva Kajikawa
+5%Rhenzo Hideki Silva Kajikawa
 %9. Sejam U1, U2, U3 ∼ Unif({0, 1, 2}) variaveis aleatorias sorteadas independentemente. Sejam
 %X = U1 + U2 + U3, Y = U1(U2 + U3).
 %(a) Determine a PMF conjunta de X e Y .
@@ -8,7 +8,7 @@
 
 close all; clear all ; clc;
 
-N = 100;
+N = 1000000;
 
 X = zeros(1,N);
 Y = zeros(1,N);
@@ -34,7 +34,7 @@ x = 0: 1 :6;
 y = 0: 1 :8;
 
 
-histXY = zeros(9, 9);
+histXY = zeros(9, 7);
 
 for i = 1 : 7
   for j = 1 : 9
