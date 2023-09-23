@@ -49,20 +49,20 @@ PmfXY_teo =[] ;
 % b) PMFs marginais de X e Y
 
 pmfX_sim = hist(X, x) / N;
-%pmfX_teo = [1/27 3/27 6/27 7/27 6/27 3/27 1/27];
+pmfX_teo = [1/27 3/27 6/27 7/27 6/27 3/27 1/27];
 
 pmfY_sim = hist(Y, y) / N;
-%pmfY_teo = pmfX_teo;
+pmfY_teo = [11/27 2/27 5/27 2/27 4/27 2/27 1/27];
 
 figure;
 subplot(2, 2, 1); hold on; grid on;
-bar(x, pmfX_sim, 'y');
-%stem(x, pmfX_teo, 'b', 'LineWidth', 4);
+bar(x, pmfX_sim, 'r');
+stem(x, pmfX_teo, 'b', 'LineWidth', 4);
 xlabel('x'); ylabel('p_X(x)');
 
 subplot(2, 2, 2); hold on; grid on;
-bar(y, pmfY_sim, 'y');
-%stem(y, pmfY_teo, 'b', 'LineWidth', 4);
+bar(y, pmfY_sim, 'r');
+stem(y, pmfY_teo, 'b', 'LineWidth', 4);
 xlabel('y'); ylabel('p_Y(y)');
 
 

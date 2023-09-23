@@ -38,7 +38,14 @@
 \ (c) Determine e esboce as PMFs condicionais de X dado que Y = y, para dois valores de y ∈ SY a
 sua escolha.
 #pagebreak()
+= Resolução
+Temos que:
+ \ $U_1, U_2, U_3 ∼ "Unif({0, 1, 2})"$
+ \ $X = U_1 + U_2 + U_3 $
+ \ $Y = U_1(U_2 + U_3).$
 
+== Resolução da PMF conjunta
+Determinando a PMF conjunta 
 #align(center)[
 #table(
   columns: (auto,auto,auto,auto,auto,auto),
@@ -78,6 +85,8 @@ sua escolha.
 ]
 
 #pagebreak()
+== Resolução da PMFs marginais de $x$ e $y$
+Determinando a tabela PMFs marginais de $x$ e $y$
 #align(center)[
 #table(
   columns: (auto,auto,auto,auto,auto,auto,auto,auto,auto),
@@ -91,7 +100,8 @@ sua escolha.
   [$x=5$],[$0$],[$0$],[$0$],[$0$],[$1/27$],[$2/27$],[$0$],[$3/27$],
   [$x=6$],[$0$],[$0$],[$0$],[$0$],[$0$],[$0$],[$1/27$],[$1/27$],
   [$p_y (y)$],[$11/27$],[$2/27$],[$5/27$],[$2/27$],[$4/27$],[$2/27$],[$1/27$],[$1$]
-
-
 )
 ]
+
+#pagebreak()
+
