@@ -35,8 +35,7 @@
 #align(center)[$X = U_1 + U_2 + U_3, Y = U_1(U_2 + U_3).$]
 \ (a) Determine a PMF conjunta de X e Y .
 \ (b) Determine e esboce as PMFs marginais de X e Y .
-\ (c) Determine e esboce as PMFs condicionais de X dado que Y = y, para dois valores de y ∈ SY a
-sua escolha.
+\ (c) Determine e esboce as PMFs condicionais de X dado que Y = y, para dois valores de y ∈ SY asua escolha.
 #pagebreak()
 = Resolução
 Temos que:
@@ -104,4 +103,5 @@ Determinando a tabela PMFs marginais de $x$ e $y$
 ]
 
 #pagebreak()
-
+== Resolução das PMFs condicionais de X dado que Y = y, para dois valores de y ∈ SY asua escolha.
+Determinando as PMFs conficionais de X dado que Y = y,  para $y ∈ {0, 8}$
