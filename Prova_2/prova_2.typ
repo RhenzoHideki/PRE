@@ -6,7 +6,7 @@
         Avaliação 2
     ],
     subtitle: [
-        Processos Estocásticcos (PRE029006)
+        Processos Estocásticos (PRE029006)
     ],
     // Se apenas um autor colocar , no final para indicar que é um array
     authors: (
