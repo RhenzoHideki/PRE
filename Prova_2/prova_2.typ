@@ -99,9 +99,36 @@ Determinando a tabela PMFs marginais de $x$ e $y$
   [$x=5$],[$0$],[$0$],[$0$],[$0$],[$1/27$],[$2/27$],[$0$],[$3/27$],
   [$x=6$],[$0$],[$0$],[$0$],[$0$],[$0$],[$0$],[$1/27$],[$1/27$],
   [$p_y (y)$],[$11/27$],[$2/27$],[$5/27$],[$2/27$],[$4/27$],[$2/27$],[$1/27$],[$1$]
+  
 )
+  #figure(
+   image("./Figuras/pmfs.png",width: 100%),
+   caption: [
+    Gráficos das PMFs de $x$ e $y$
+   ] 
+  )
 ]
+
 
 #pagebreak()
 == Resolução das PMFs condicionais de X dado que Y = y, para dois valores de y ∈ SY asua escolha.
 Determinando as PMFs conficionais de X dado que Y = y,  para $y ∈ {0, 8}$
+#align(center)[
+#table(
+  columns: (auto , auto),
+  [$p_x (x|y=0)$],[$p_x (x|y=8)$],
+  [$1/27$],[0],
+  [$3/27$],[0],
+  [$4/27$],[0],
+  [$2/17$],[0],
+  [$1/27$],[0],
+  [$0$],[0],
+  [$0$],[1/27]
+)
+  #figure(
+   image("./Figuras/pmfs_cond.png",width: 100%),
+   caption:[
+    Gráficos das PMFs de $X$ para $y ∈ {0, 8}$
+   ]
+  )
+]

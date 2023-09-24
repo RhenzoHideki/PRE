@@ -84,13 +84,13 @@ pmfX_condY0_teo = [1/27  3/27  4/27  2/27  1/27  0  0 ];
 pmfX_condY1_teo = [ 0      0     0     0    0   0  1/27];
 
 
-subplot(2, 2, 1); hold on; grid on;
+subplot(2, 2, 3); hold on; grid on;
 bar(x, pmfX_condY0_teo, 'r');
 stem(x, pmfX_condY0_teo, 'b', 'LineWidth', 4);
-xlabel('x'); ylabel(sprintf('p_X(x | Y = -2)'));
+xlabel('x'); ylabel(sprintf('p_X(x | Y = 1)'));
 
-subplot(2, 2, 2); hold on; grid on;
+subplot(2, 2, 4); hold on; grid on;
 bar(x, pmfX_condY1_teo, 'r');
 stem(x, pmfX_condY1_teo, 'b', 'LineWidth', 4);
-xlabel('x'); ylabel(sprintf('p_X(x | Y = 1)'));
+xlabel('x'); ylabel(sprintf('p_X(x | Y = 8)'));
 
