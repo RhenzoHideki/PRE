@@ -13,13 +13,9 @@ close all; clear all ; clc;
 N = 100000;
 
 %Gerar X e Y
-X = rand(20 , N) - 10;
-
-for i = 1 : N
-  Y(i) = 10 - abs(X(i) * rand());
-end
+X = randi([-10 10], 1 ,N);
 
 figure; hold on ; grid on;
 
-scatter(X(1:5000),Y(1:5000));
-axis('square');
+plot(X/N);
+
