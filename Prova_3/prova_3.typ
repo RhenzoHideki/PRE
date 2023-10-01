@@ -1,4 +1,4 @@
-#import "../typst-ifsc/template-article.typ": article
+#import "../typst-ifsc/templates/article.typ": article
 
 
   #show: doc => article(
