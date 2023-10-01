@@ -2,21 +2,22 @@
 
 
   #show: doc => article(
-    title: [
-        Avaliação 3
-    ],
-    subtitle: [
-        Processos Estocásticos (PRE029006)
-    ],
+    title: "Avaliação 3",
+    subtitle: "Processos Estocásticos (PRE029006)",
     // Se apenas um autor colocar , no final para indicar que é um array
-    authors: (
-      [Rhenzo Hideki Silva Kajikawa],
-    ),
-    date: [
-      20 de Setembro de 2023
-    ],
+    authors:("Rhenzo Hideki Silva Kajikawa",),
+    date: "20 de Setembro de 2023",
     doc,
   )
+
+  #show: doc => article(
+  title: "Typst IFSC-SJ",
+  subtitle: "Um template para o Typst voltado para",
+  // Se apenas um autor colocar , no final para indicar que é um array
+  authors: ("Gabriel Luiz Espindola Pedro",),
+  date: "13 de Setembro de 2023",
+  doc,
+)
 
 = Comando da Avaliação
 == Atenção
@@ -38,7 +39,8 @@
 #align(center)[
   #figure(
    image("./Figuras/Grafico.png",width: 100%),
-    supplement: "",
+    caption: "Gráfico elaborado pelo professor",
+    supplement: "Figura",
 )]
 
 \ (a) Determine o valor da constante k .
@@ -52,7 +54,7 @@
 = Resolução
 == Determinando a $"PDF"$ conjunta $X$ e $Y$
 Temos: 
-align
+
 #align(center)[
 $X ~ "Unif"([-10,10])$
 
@@ -66,7 +68,19 @@ $
 \ f_x,_y (x,y) = f_X(x) and f_Y(Y|X=x)
 $
 ]
+#align(center)[
+  #figure(
+   image("./Figuras/fyANDfx.png",width: 110%),
+    caption:"Ilustrando a intersecção das 2 funções ",
+    supplement: "Figura ",
+  )
+]
+\ A função em vermelho é $f_X (x)$ , nela podemos ver o intervalo respeita 
+$f_X (x) = [-10 <= x <= 10]$ .
+\ A função em azul é $f_Y (y)$ , nela é possível ver que também respeita o calcula acima $f_Y (y|X=x) = [0<= y <= 20-abs(x) ] $.
+\ Com essas 2 funções pode-se chegar na função da questão a colorida em magenta , fazendo a intersecção delas $f_x,_y (x,y) = f_X(x) and f_Y(Y|X=x)$ 
 
+#pagebreak();
 == Determine o valor da constante k
 
 Portanto: 
@@ -76,7 +90,8 @@ $
 \ A_"total" =integral_(-10)^(10) integral_(0)^(20 - abs(x)) 1 dif y dif x =
 \ integral_(-10)^(10) 20 - abs(x) dif x = 300
 $
-  ]
+]
+
 Sabemos que:
 #align(center)[
 $
@@ -86,7 +101,27 @@ $
 $ 
 ]
 == Resolução da $Pr[X >= Y]$
+Para calcular a $Pr[X >= Y]$ podemos criar uma reta $d$ que respeita a seguinte condição $d : X>=Y$ , teremos  uma reta como na figura a seguir:  
+#align(center)[
+  #figure(
+   image("./Figuras/fxyANDPrxy.png",width: 110%),
+    caption:"Ilustrando a intersecção de "  +  $f_Y (y|X=x)$ + " e  " + $d$,
+    supplement: "Figura ",
+  )
+]
+A função em laranja é a $f_Y (y|X=x)$ e a area em azul é $d$ , a area em magenta é o que a questão quer $Pr[X >= Y]$
+Baseando-se no gráfico podemos calcular a área de $Pr[X >= Y]$,
 
+\
+\
+
+o coeficiente $k = 1/300$
+
+a área é $A_Pr[X >= Y] = ( 10 dot 10 )/2 = 50$
+
+logo $Pr[X >= Y]= k dot A_Pr[X >= Y] = 1/300 dot 50 = 1/6$ 
+
+$Pr[X >= Y] = 1/6 $
 == Resolução da $"PDF"$ marginal em $Y$
 
 == Resolução da $"CDF"$ marginal de $Y$
