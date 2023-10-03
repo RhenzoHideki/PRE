@@ -1,4 +1,4 @@
-#import "../typst-ifsc/templates/article.typ": article
+#import "../typst-ifsc/template-article.typ": article
 
 
   #show: doc => article(
@@ -10,14 +10,6 @@
     doc,
   )
 
-  #show: doc => article(
-  title: "Typst IFSC-SJ",
-  subtitle: "Um template para o Typst voltado para",
-  // Se apenas um autor colocar , no final para indicar que é um array
-  authors: ("Gabriel Luiz Espindola Pedro",),
-  date: "13 de Setembro de 2023",
-  doc,
-)
 
 = Comando da Avaliação
 == Atenção

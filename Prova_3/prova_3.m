@@ -12,6 +12,7 @@ close all; clear all ; clc;
 
 N = 100000;
 X = 20*rand(1 ,N) - 10;
+dy = 0.002; y = -1.2 : dy : 1.2;
 
 for i = 1 : N
   Y(i) = rand()*(20 - abs(X(i))) ;
@@ -20,6 +21,7 @@ end
 figure; hold on ; grid on;
 scatter(X(1:5000),Y(1:5000));
 axis('square');
+dy = 0.002; y = -1.2 : dy : 1.2;
 
 ##(b) Determine Pr[X ≥ Y ].a
 
@@ -45,16 +47,17 @@ cdfY_sim = cumsum(histY) / N;
 subplot(3, 1, 2); grid on; hold on;
 plot(y, cdfY_sim, 'g', 'LineWidth', 4);
 
-% e) PDF condicional de Y dado que X = 5.
 
-idx = (4 <= X) & (X <= 6);
-histY_condX = hist(Y(idx), y);
-pdfY_condX_sim = histY_condX / trapz(y, histY_condX);
+% e) PDF condicional de Y dado que X = 5
+x0 = 5;
+Ycond = Y(abs(X - x0) < 0.001);
+pdfY_condX_sim = hist(Ycond , y)/(length(Ycond)* dy) ;
 
 
 subplot(3, 1, 3); grid on; hold on;
-bar(y, pdfY_condX_sim, 'y');
+bar(y, pdfY_condX_sim  , 'y');
+
 
 % f) Covariância entre X e Y
 rhoXY_sim = cov(X, Y) / sqrt(var(X) * var(Y))
-
+rho
