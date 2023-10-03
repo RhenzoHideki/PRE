@@ -123,7 +123,9 @@ logo $Pr[X >= Y]= k dot A_Pr[X >= Y] = 1/300 dot 50 = 1/6$
 
 $Pr[X >= Y] = 1/6 $
 == Resolução da $"PDF"$ marginal em $Y$
-$f_Y(y) = integral_( - infinity )^( infinity ) f_X,Y (x,y) dif x$
+$f_Y(y) = integral_( - infinity )^( infinity ) f_X,_Y (x,y) dif x$
+\ $f_Y(y) = integral_( - infinity )^( infinity ) f_X,_Y (x,y) dif x$
+
 == Resolução da $"CDF"$ marginal de $Y$
 
 == Resolução da $"PDF"$ condicional de $Y$ dado $X = 5$
