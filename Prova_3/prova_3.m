@@ -11,15 +11,21 @@
 close all; clear all ; clc;
 
 N = 100000;
-X = 20*rand(1 ,N) - 10;
 
 
-for i = 1 : N
-  Y(i) = rand()*(20 - abs(X(i))) ;
+##for i = 1 : N
+##  Y(i) = rand()*(20 - abs(X(i))) ;
+##end
+
+for i = 1: N
+  do
+    X(i) = 20*rand() - 10;
+    Y(i) = 20*rand();
+  until Y(i) <= (20 - abs(X(i)))
 end
 
 figure; hold on ; grid on;
-scatter(X(1:5000),Y(1:5000));
+scatter(X(1:15000),Y(1:15000));
 axis('square');
 
 ##(b) Determine Pr[X ≥ Y ].a

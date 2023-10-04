@@ -45,14 +45,8 @@
 #pagebreak()
 = Resolução
 == Determinando a $"PDF"$ conjunta $X$ e $Y$
+
 Temos: 
-
-#align(center)[
-$X ~ "Unif"([-10,10])$
-
-$Y|X=x ~ "Unif"([0,x])$
-]
-Portanto: 
   #align(center)[
 $
 \ f_X (x) = 1 dot [-10 <= x <= 10]
@@ -79,15 +73,15 @@ Portanto:
   #align(center)[
 $
 \ 
-\ A_"total" =integral_(-10)^(10) integral_(0)^(20 - abs(x)) 1 dif y dif x =
-\ integral_(-10)^(10) 20 - abs(x) dif x = 300
+\ V_"total" =integral_(-10)^(10) integral_(0)^(20 - abs(x)) k dif y dif x =
+\ k integral_(-10)^(10) 20 - abs(x) dif x = 300k
 $
 ]
 
 Sabemos que:
 #align(center)[
 $
-\ A dot k = 1
+\ V_"total" dot k = 1
 \ 300 dot k = 1
 \ k = 1/300
 $ 
@@ -109,16 +103,21 @@ Baseando-se no gráfico podemos calcular a área de $Pr[X >= Y]$,
 
 o coeficiente $k = 1/300$
 
-a área é $A_Pr[X >= Y] = ( 10 dot 10 )/2 = 50$
+a área da base é $A_Pr[X >= Y] = ( 10 dot 10 )/2 = 50$
 
 logo $Pr[X >= Y]= k dot A_Pr[X >= Y] = 1/300 dot 50 = 1/6$ 
 
 $Pr[X >= Y] = 1/6 $
 == Resolução da $"PDF"$ marginal em $Y$
-$f_Y(y) = integral_( - infinity )^( infinity ) f_X,_Y (x,y) dif x$
-\ $f_Y(y) = integral_( - infinity )^( infinity ) f_X,_Y (x,y) dif x$
+$
+\ 
+\ E[Y] =integral_(-10)^(10) integral_(0)^(20 - abs(x)) k dot y dif y dif x =
+\ 1/300 dot integral_(-10)^(10) integral_(0)^(20 - abs(x))  dot y dif y dif x =
+  70/9 approx 7.77778
+$
 
 == Resolução da $"CDF"$ marginal de $Y$
+$integral_(-10)^(10) integral_(0)^(20 - abs(x)) k dot y dif y dif x$
 
 == Resolução da $"PDF"$ condicional de $Y$ dado $X = 5$
 
