@@ -101,24 +101,42 @@ Baseando-se no gráfico podemos calcular a área de $Pr[X >= Y]$,
 \
 \
 
-o coeficiente $k = 1/300$
+o coeficiente: $ k = 1/300 $
 
-a área da base é $A_Pr[X >= Y] = ( 10 dot 10 )/2 = 50$
+a área da base é: $ A_Pr[X >= Y] = ( 10 dot 10 )/2 = 50 $
 
-logo $Pr[X >= Y]= k dot A_Pr[X >= Y] = 1/300 dot 50 = 1/6$ 
+logo: $ Pr[X >= Y]= k dot A_Pr[X >= Y] = 1/300 dot 50 = 1/6 $ 
 
-$Pr[X >= Y] = 1/6 $
+$ Pr[X >= Y] = 1/6 $
 == Resolução da $"PDF"$ marginal em $Y$
-$
-\ 
-\ E[Y] =integral_(-10)^(10) integral_(0)^(20 - abs(x)) k dot y dif y dif x =
-\ 1/300 dot integral_(-10)^(10) integral_(0)^(20 - abs(x))  dot y dif y dif x =
-  70/9 approx 7.77778
-$
+
 
 == Resolução da $"CDF"$ marginal de $Y$
-$integral_(-10)^(10) integral_(0)^(20 - abs(x)) k dot y dif y dif x$
+\ para : $ - infinity <= y <= 0 $
+\ $ integral_(-10)^(10) k dot 0 dif y dif x = 0 $
+
+\ para : $ 0 <= y <= 10 $
+\ $ integral_(0)^(y) integral_(-10)^(10)  k dot 1 dif x dif u = y/15 $
+#pagebreak()
 
 == Resolução da $"PDF"$ condicional de $Y$ dado $X = 5$
+\ para : $ x=5 , "sabemos que" y = 20-|x| "se" x=5, 20-|x| = 15 $
+\  $ integral_(0)^(15)  1/300 dot 1 dif y = 1/20 = 0.05 $
+
 
 == Resolução da covariância entre $X$ e $Y$
+$
+\ 
+\ E[Y] =integral_(-10)^(10) integral_(0)^(20 - abs(x)) k dot y dif y dif x ->
+ 1/300 dot integral_(-10)^(10) integral_(0)^(20 - abs(x))   y dif y dif
+x = 70/9 approx 7.77778
+\
+\ E[X] =integral_(-10)^(10) integral_(0)^(20 - abs(x)) k dot x dif y dif x ->
+ 1/300 dot integral_(-10)^(10) integral_(0)^(20 - abs(x))   x dif y dif
+x = 0
+\
+\ E["XY"] =integral_(-10)^(10) integral_(0)^(20 - abs(x)) k dot x dot y dif y dif x ->
+ 1/300 dot integral_(-10)^(10) integral_(0)^(20 - abs(x))   x dot y dif y dif
+x = 0
+\ "cov[XY]" = E["XY"]- E[X] dot E[Y] = 0 - 0 dot 70/9 = 0
+$

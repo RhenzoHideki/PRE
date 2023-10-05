@@ -11,11 +11,8 @@
 close all; clear all ; clc;
 
 N = 100000;
-
-
-##for i = 1 : N
-##  Y(i) = rand()*(20 - abs(X(i))) ;
-##end
+dy = 0.5
+y = -25 : dy : 25;
 
 for i = 1: N
   do
@@ -34,8 +31,6 @@ PrX_maior_igual_Y_sim = mean(X >= Y)
 PrX_maior_igual_Y_teo = 1/6
 
 % c) PDF marginal de Y
-
-y = -25 : 0.5 : 25;
 
 pdfY_sim = hist(Y, y) / (N);
 %pdfY_teo ;
@@ -56,11 +51,11 @@ plot(y, cdfY_sim, 'g', 'LineWidth', 4);
 x0 = 5;
 Ycond = Y(abs(X - x0) < 0.001);
 pdfYcond_sim = hist(Ycond , y)/(length(Ycond)) ;
-
+sum(Ycond)/length(Ycond)
 
 subplot(3, 1, 3); grid on; hold on;
 bar(y, pdfYcond_sim, 'y');
 
 % f) Covariância entre X e Y
 rhoXY_sim = cov(X, Y) / sqrt(var(X) * var(Y))
-
+rhoXY_teo = 0;

@@ -14,18 +14,13 @@ X = zeros(1,N);
 Y = zeros(1,N);
 
 %Gerar X e Y
+U1 = randi([0 2], 1, N)
+U2 = randi([0 2], 1, N)
+U3 = randi([0 2], 1, N)
+
+
+
 for i = 1 : N
-  A = [0 1 2];
-
-  idx = randi([1 3]);
-  U1 = A(idx);          % Descobrindo se o U1 está em 0, 1 ou 2
-
-  idx = randi([1 3]);
-  U2 = A(idx);          % Descobrindo se o U2 está em 0, 1 ou 2
-
-  idx = randi([1 3]);
-  U3 = A(idx);          % Descobrindo se o U3 está em 0, 1 ou 2
-
   X(i) = U1 + U2 + U3;  % Definicao do X
   Y(i) = U1*(U2 + U3);  % Definicao do Y
 end
