@@ -109,20 +109,27 @@ logo: $ Pr[X >= Y]= k dot A_Pr[X >= Y] = 1/300 dot 50 = 1/6 $
 
 $ Pr[X >= Y] = 1/6 $
 == Resolução da $"PDF"$ marginal em $Y$
-
+\ para : $ - infinity <= y <= 0 $
+\ $ f_y (y) = integral_(-infinity)^(infinity) 0 dif x = 0 $
+\ para : $ 0 <= y <= 10 $
+\ $ f_y (y) = integral_(-10)^(10) 1/200 dif x = 1/10 $
+\ para : $ 10 <= y <= 20 $
+\ $ f_y (y) = integral_(20+x)^(20+x) 1/100 dif x = -x/50 $
 
 == Resolução da $"CDF"$ marginal de $Y$
 \ para : $ - infinity <= y <= 0 $
-\ $ integral_(-10)^(10) k dot 0 dif y dif x = 0 $
-
+\ $ f_y (y) = integral_(-infinity)^(infinity) 0 dif x = 0 $
 \ para : $ 0 <= y <= 10 $
-\ $ integral_(0)^(y) integral_(-10)^(10)  k dot 1 dif x dif u = y/15 $
-#pagebreak()
-
-== Resolução da $"PDF"$ condicional de $Y$ dado $X = 5$
-\ para : $ x=5 , "sabemos que" y = 20-|x| "se" x=5, 20-|x| = 15 $
-\  $ integral_(0)^(15)  1/300 dot 1 dif y = 1/20 = 0.05 $
-
+\ $ f_y (y) = integral_(-10)^(10) y/200 dif x = y/10 $
+\ para : $ 10 <= y <= 20 $
+\ $ f_y (y) = integral_(20+x)^(20+x) y/100 dif x = ( -x dot y)  /50  + y/10$
+\ para : $ 20 <= y <= infinity $
+\ $ f_y (y) = 1  $
+== Resolução da $"PDF"$ marginal em $Y$ dado X = 5
+\ para : $ x = 5 , 0 <= y <= 15 $
+\ $ f_x (5) = integral_(0)^(15) 1/300 dif y = 1/20 = 0.05 $
+\ $ f_y (y | x=5 ) = ( f_x ,_y ( 5,y) ) /( f_x (5) ) $
+\ $ f_y (y | x=5 ) = (1/300) / (1/20) = 1/15 $
 
 == Resolução da covariância entre $X$ e $Y$
 $

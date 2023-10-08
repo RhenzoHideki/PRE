@@ -1,23 +1,14 @@
-#import "../typst-ifsc/template-article.typ": article
+#import "../typst-ifsc/templates/article.typ": article
 
 
   #show: doc => article(
-    title: [
-        Avaliação 2
-    ],
-    subtitle: [
-        Processos Estocásticos (PRE029006)
-    ],
+    title: "Avaliação 2",
+    subtitle: "Processos Estocásticos (PRE029006)",
     // Se apenas um autor colocar , no final para indicar que é um array
-    authors: (
-      [Rhenzo Hideki Silva Kajikawa],
-    ),
-    date: [
-      20 de Setembro de 2023
-    ],
+    authors:("Rhenzo Hideki Silva Kajikawa",),
+    date: "20 de Setembro de 2023",
     doc,
   )
-
 = Comando da Avaliação
 == Atenção
 - Resolva apenas a questão sorteada
@@ -114,17 +105,22 @@ Determinando a tabela PMFs marginais de $x$ e $y$
 == Resolução das PMFs condicionais de X dado que Y = y, para dois valores de y ∈ SY asua escolha.
 Determinando as PMFs conficionais de X dado que Y = y,  para $y ∈ {0, 8}$
 #align(center)[
+
+  
 #table(
   columns: (auto , auto),
+    inset: 10pt,
+    
   [$p_x (x|y=0)$],[$p_x (x|y=8)$],
-  [$1/27$],[0],
-  [$3/27$],[0],
-  [$4/27$],[0],
-  [$2/17$],[0],
-  [$1/27$],[0],
-  [$0$],[0],
-  [$0$],[1/27]
-)
+  [$ 1/27 / 11/27 = 1/11 $],[$ 0  / 1/27 = 0 $],
+  [$ 3/27 / 11/27 = 3/11 $],[$ 0  / 1/27 = 0 $],
+  [$ 4/27 / 11/27 = 4/11 $],[$ 0  / 1/27 = 0 $],
+  [$ 2/17 / 11/27 = 2/11 $],[$ 0  / 1/27 = 0 $],
+  [$ 1/27 / 11/27 = 1 /11 $],[$ 0 / 1/27 = 0 $],
+  [$ 0 / 11/27 = 0 $],[$ 0 / 1/27 = 0$],
+  [$ 0 / 11/27 = 0 $],[$ 1/27 / 1/27 = 1 $]
+) 
+
   #figure(
    image("./Figuras/pmfs_cond.png",width: 100%),
    caption:[

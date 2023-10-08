@@ -14,16 +14,13 @@ X = zeros(1,N);
 Y = zeros(1,N);
 
 %Gerar X e Y
-U1 = randi([0 2], 1, N)
-U2 = randi([0 2], 1, N)
-U3 = randi([0 2], 1, N)
+  U1 = randi([0 2], 1, N);
+  U2 = randi([0 2], 1, N);
+  U3 = randi([0 2], 1, N);
 
+  X = U1 + U2 + U3;  % Definicao do X
+  Y = U1.*(U2 + U3);  % Definicao do Y
 
-
-for i = 1 : N
-  X(i) = U1 + U2 + U3;  % Definicao do X
-  Y(i) = U1*(U2 + U3);  % Definicao do Y
-end
 
 x = [ 0 1 2 3 4 5 6];
 y = [ 0 1 2 3 4 6 8];
@@ -70,22 +67,22 @@ xlabel('y'); ylabel('p_Y(y)');
 % c) PMFs condicionais de X dado que Y = y, para y ∈ {0, 8}
 
 XcondY = X(Y == 0);
-pmfX_condY0_sim = hist(XcondY, x) / sum(Y == 0);
+pmfX_condY_sim(1, :) = hist(XcondY, x) / sum(Y == 0);
 
 XcondY = X(Y == 8);
-pmfX_condY1_sim = hist(XcondY, x) / sum(Y == 8);
+pmfX_condY_sim(2, :) = hist(XcondY, x) / sum(Y == 8);
 
-pmfX_condY0_teo = [1/27  3/27  4/27  2/27  1/27  0  0 ];
-pmfX_condY1_teo = [ 0      0     0     0    0   0  1/27];
+pmfX_condY_teo = [ 1/11  3/11  4/11  2/11  1/11  0  0
+                    0      0     0     0    0   0  1] ;
 
 
 subplot(2, 2, 3); hold on; grid on;
-bar(x, pmfX_condY0_teo, 'r');
-stem(x, pmfX_condY0_teo, 'b', 'LineWidth', 4);
+bar(x, pmfX_condY_sim(1, :), 'r');
+stem(x, pmfX_condY_teo(1, :), 'b', 'LineWidth', 4);
 xlabel('x'); ylabel(sprintf('p_X(x | Y = 1)'));
 
 subplot(2, 2, 4); hold on; grid on;
-bar(x, pmfX_condY1_teo, 'r');
-stem(x, pmfX_condY1_teo, 'b', 'LineWidth', 4);
+bar(x, pmfX_condY_sim(2, :), 'r');
+stem(x, pmfX_condY_teo(2, :), 'b', 'LineWidth', 4);
 xlabel('x'); ylabel(sprintf('p_X(x | Y = 8)'));
 
