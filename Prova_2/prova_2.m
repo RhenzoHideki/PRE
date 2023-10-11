@@ -75,13 +75,13 @@ pmfX_condY_sim(2, :) = hist(XcondY, x) / sum(Y == 8);
 pmfX_condY_teo = [ 1/11  3/11  4/11  2/11  1/11  0  0
                     0      0     0     0    0   0  1] ;
 
-
-subplot(2, 2, 3); hold on; grid on;
+figure
+subplot(2, 1,1); hold on; grid on;
 bar(x, pmfX_condY_sim(1, :), 'r');
 stem(x, pmfX_condY_teo(1, :), 'b', 'LineWidth', 4);
 xlabel('x'); ylabel(sprintf('p_X(x | Y = 1)'));
 
-subplot(2, 2, 4); hold on; grid on;
+subplot(2, 1,2); hold on; grid on;
 bar(x, pmfX_condY_sim(2, :), 'r');
 stem(x, pmfX_condY_teo(2, :), 'b', 'LineWidth', 4);
 xlabel('x'); ylabel(sprintf('p_X(x | Y = 8)'));
