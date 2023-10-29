@@ -16,11 +16,11 @@
 - Resolva apenas a questão sorteada
 - Simule (Monte Carlo) todos os itens da questão no Octave/MATLAB
 == Instruções gerais:
-- A aaliação é individual. Não é permitida a troca de nenhum tipo de informação sobre a avaliação entre os alunos.
-- Calculadoras, softwares, livros e outroos materiais podem e devem ser utilizados, mas todos seus passos devem ser jutificados.
+- A avaliação é individual. Não é permitida a troca de nenhum tipo de informação sobre a avaliação entre os alunos.
+- Calculadoras, softwares, livros e outros materiais podem e devem ser utilizados, mas todos seus passos devem ser justificados.
 - É permitido o envio de manuscritos digitalizado (ex: foto) ou de documento digital.
-- Deverá ser enviado um único arquivo em formato *.zip* pelo *SIGAA*, contendo um arquiv *.pdf* e um ou mais arquivos *.m*.
-- Devará ser respeitada a data de fechamento indicado no *SIGAA*. Não serão aceitos envios por email.
+- Deverá ser enviado um único arquivo em formato *.zip* pelo *SIGAA*, contendo um arquivo *.pdf* e um ou mais arquivos *.m*.
+- Deverá ser respeitada a data de fechamento indicado no *SIGAA*. Não serão aceitos envios por email.
 - Dúvidas? Entre  em contato.
 
 
@@ -109,27 +109,47 @@ logo: $ Pr[X >= Y]= k dot A_Pr[X >= Y] = 1/300 dot 50 = 1/6 $
 
 $ Pr[X >= Y] = 1/6 $
 == Resolução da $"PDF"$ marginal em $Y$
-\ para : $ - infinity <= y <= 0 $
-\ $ f_y (y) = integral_(-infinity)^(infinity) 0 dif x = 0 $
-\ para : $ 0 <= y <= 10 $
-\ $ f_y (y) = integral_(-10)^(10) 1/200 dif x = 1/10 $
-\ para : $ 10 <= y <= 20 $
-\ $ f_y (y) = integral_(20+x)^(20+x) 1/100 dif x = -x/50 $
+
+Assumindo que x <= 0
+
+Caso $0 < y <= 10 $
+$ integral_(0)^(10  )10/300 times  dif y = 1/3 $
+
+Caso $10 < y <= 20 $
+$ integral_(10)^(20  )1/300 times (20-y) dif y = 1/6 $
+
+
+Assumindo que x >=0
+
+Caso $0 < y <= 10 $
+$ integral_(0)^(10  )10/300 times  dif y = -1/3 $
+
+Caso $10 < y <= 20 $
+$ integral_(10)^(20  )1/300 times (20-y) dif y = -1/6 $
+
+
+
 
 == Resolução da $"CDF"$ marginal de $Y$
-\ para : $ - infinity <= y <= 0 $
-\ $ f_y (y) = integral_(-infinity)^(infinity) 0 dif x = 0 $
-\ para : $ 0 <= y <= 10 $
-\ $ f_y (y) = integral_(-10)^(10) y/200 dif x = y/10 $
-\ para : $ 10 <= y <= 20 $
-\ $ f_y (y) = integral_(20+x)^(20+x) y/100 dif x = ( -x dot y)  /50  + y/10$
-\ para : $ 20 <= y <= infinity $
-\ $ f_y (y) = 1  $
+
+Caso $ y < 0 $
+y = 0
+Caso $0 < y < 10 $
+$ integral_(0)^(y  )  2 times 10/300   dif = y/15 $
+Caso $0 < y <= 10 $
+$ integral_(0)^(10-  )  2 times 10/300   dif + integral_(10-)^(10+  )  2 times delta(y-10)/300   dif y = 10/15 $
+logo:  $10 < y <= 20 $
+$ integral_(0)^(10-  )  2 times 10/300   dif + integral_(10-)^(10+  )  2 times delta(y-10)/300   dif y + integral_(10)^(y  )  2 times (20-y)/300   \   dif +  y = -y^2/300 + (2y)/15 - 1 + 10/15 $
+
+logo:  $ 20 < y $
+$ integral_(0)^(10-  )  2 times 10/300   dif + integral_(10-)^(10+  )  2 times delta(y-10)/300   dif y + integral_(10)^(20  )  2 times (20-y)/300   \   dif +  y = 1 $
+
 == Resolução da $"PDF"$ marginal em $Y$ dado X = 5
 \ para : $ x = 5 , 0 <= y <= 15 $
 \ $ f_x (5) = integral_(0)^(15) 1/300 dif y = 1/20 = 0.05 $
 \ $ f_y (y | x=5 ) = ( f_x ,_y ( 5,y) ) /( f_x (5) ) $
 \ $ f_y (y | x=5 ) = (1/300) / (1/20) = 1/15 $
+\ $ f_y (y | x=5 ) = (1/300) / (1/20) = 1/15 , 0 <= y <= 15 , \ 0 , c.c. $
 
 == Resolução da covariância entre $X$ e $Y$
 $

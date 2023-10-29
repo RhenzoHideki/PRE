@@ -1,4 +1,4 @@
-5%7. Considere duas variaveis aleatorias X e Y com PDF conjunta constante (igual a k) e diferente de zero
+%7. Considere duas variaveis aleatorias X e Y com PDF conjunta constante (igual a k) e diferente de zero
 ##apenas na area sombreada da figura abaixo.
 ##(a) Determine o valor da constante k.
 ##(b) Determine Pr[X ≥ Y ].a
@@ -35,9 +35,9 @@ PrX_maior_igual_Y_teo = 1/6
 
 % c) PDF marginal de Y
 
-pdfY_sim = hist(Y, y) / N;
-pdfY_teo = 1/10 .* (0 <= y & y < 10) + ...
-            -x/50 .* (10 <= y & y < 20);
+pdfY_sim = hist(Y, y) / (N * dy );
+pdfY_teo = 20/300 .* (0 <= y & y < 10) + ...
+            (40-2.*y)/300 .* (10 <= y & y < 20);
 
 figure
 subplot(3, 1, 1); grid on; hold on;
@@ -47,9 +47,11 @@ xlabel('y'); ylabel('f_Y(y)');
 
 % d) CDF marginal de Y
 
-cdfY_sim = cumsum(hist(Y, y)) / N;
-cdfY_teo = (y/10) .* ( 0 <= y & y <10) + ...
-           (-(x.*y)/50) .* ( 10 <= y & y < 20);
+cdfY_sim = cumsum(hist(Y, y)) /(N);
+cdfY_teo = (y/15) .* ( 0 <= y & y <10) + ...
+           (((-y.^2)/300) +2.*y/15 - 1 + (10/15) )  .* ( 10 <= y & y <= 20) +...
+           (1)  .* ( 20 < y);
+
 
 subplot(3, 1, 2); grid on; hold on;
 plot(y, cdfY_sim, 'g', 'LineWidth', 4);
@@ -59,13 +61,13 @@ xlim([-25 25]); ylim([-0.2, 1.2]);
 
 
 % e) PDF condicional de Y dado que X = 5
-x0 = 5;
-Ycond = Y(abs(X - x0) < 1);
-pdfY_cond_sim = hist(Ycond , y)/(length(Ycond)) ;
+idx = (4 <= X) & (X <= 6);
+histY_condX = hist(Y(idx), y);
+pdfY_condX_sim = histY_condX / trapz(y, histY_condX);
 pdfY_condX_teo = 1/15 .*  (0 <= y & y < 15);
 
 subplot(3, 1, 3); grid on; hold on;
-bar(y, pdfY_cond_sim, 'y');
+bar(y, pdfY_condX_sim, 'y');
 plot(y, pdfY_condX_teo, 'b', 'LineWidth', 4);
 xlabel('y'); ylabel('F_Y(y / X = 5)');
 
