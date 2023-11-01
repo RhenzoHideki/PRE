@@ -1,0 +1,55 @@
+#import "../typst-ifsc/templates/article.typ": article
+
+
+  #show: doc => article(
+    title: "Avaliação 3",
+    subtitle: "Processos Estocásticos (PRE029006)",
+    // Se apenas um autor colocar , no final para indicar que é um array
+    authors:("Rhenzo Hideki Silva Kajikawa",),
+    date: "20 de Setembro de 2023",
+    doc,
+  )
+= Comando da Avaliação
+== Atenção
+- Resolva apenas a questão sorteada
+- Simule (Monte Carlo) todos os itens da questão no Octave/MATLAB
+== Instruções gerais:
+- A avaliação é individual. Não é permitida a troca de nenhum tipo de informação sobre a avaliação entre os alunos.
+- Calculadoras, softwares, livros e outros materiais podem e devem ser utilizados, mas todos seus passos devem ser justificados.
+- É permitido o envio de manuscritos digitalizado (ex: foto) ou de documento digital.
+- Deverá ser enviado um único arquivo em formato *.zip* pelo *SIGAA*, contendo um arquivo *.pdf* e um ou mais arquivos *.m*.
+- Deverá ser respeitada a data de fechamento indicado no *SIGAA*. Não serão aceitos envios por email.
+- Dúvidas? Entre  em contato.
+
+
+#pagebreak()
+== Questão sorteada
+*7.* Um vetor gaussiano $arrow(X) = mat(X_1 , X_2 , X_3)^T$ tem média nula e matriz covariância $ C_arrow(X) = mat(5 , 0 ,2 ; 0 , 4 , 0 ; 2 , 0 ,3 ) $
+
+Determine:
+
+$"(a)" "Pr"[3<= X_1 <=4].$
+
+$"(b)" "Pr"[3<= X_1 <=4 " e " X_2 < 0].$
+
+$"(c)" "Pr"[3<= X_1 <=4 " e "  X_2 < 0 | X_3 = 3].$
+
+$"(d)" "Pr"[X_1 + X_2 + X_3 > 2].$
+
+
+#pagebreak()
+
+== Resolução
+Dados para as questões:
+Sabemos que no caso geral temos:
+$ "Pr"[a <= X <= b] = Phi((b-mu)/sigma)-Phi((a-mu)/sigma) $
+Também sabemos que a média é:
+
+$ mu = mat(0 ; 0 ; 0)$
+
+\ E convariancia: $ C_arrow(X) = mat(5 , 0 ,2 ; 0 , 4 , 0 ; 2 , 0 ,3 ) $
+$$
+
+=== Determinando $"Pr"[3<= X_1 <=4].$
+Aplicando a formula:
+$ "Pr"[3 <= X <= 4] = Phi((4-0)/sqrt(5))-Phi((3-0)/sqrt(5)) = 0.0624 $
