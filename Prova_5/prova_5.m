@@ -37,12 +37,7 @@ X_c_cond  = X1(idxc);
 Pr_c_sim = mean(3 <= X_c_cond & X_c_cond <= 4)
 Pr_c_teo =  normcdf((4-2)/sqrt(11/3)) - normcdf((3-2)/sqrt(11/3))
 
-W = X1+X2+X3;
-dw = 0.5 ; w = -20 : dw : 30;
-pdfW_sim = hist(W,w) / (N * dw );
-pdfW_teo = 1/sqrt((2*pi*16)) * exp((-(w).^2) / (2*16));
+%"(d)" "Pr"[X_1 + X_2 + X_3 > 2].
 
-figure; hold on ; grid on;
-bar(w,pdfW_sim,'r');
-plot(w,pdfW_teo,'b','LineWidth',4);
-xlabel('w');ylabel('f_W(w)');
+Pr_d_sim = mean((X1+X2+X3) > 2)
+Pr_d_teo = 1 - normcdf((2-0)/sqrt(16))

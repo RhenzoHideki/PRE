@@ -84,5 +84,5 @@ $ mat(W) = mat(1 , 1 , 1) times mat(X_1 ; X_2 ; X_3)$
 $ arrow(mu)_arrow(W) = A arrow(mu)_arrow(X) + arrow(b) = mat(1 , 1 , 1) times mat(0 ; 0 ; 0) = 0$
 
 $ C_arrow(W) = A C_arrow(X) A^T = mat(1 , 1 , 1) times mat(5 , 0 ,2 ; 0 , 4 , 0 ; 2 , 0 ,3 )  times mat(1 ; 1 ; 1) = 16$
-$ "Pr"[W > 2] = Phi((infinity-0)/sqrt(16))-Phi((4-0)/sqrt(16))= 0.4503 $
+$ "Pr"[W > 2] = Phi((infinity-0)/sqrt(16))-Phi((4-0)/sqrt(16))= 0.3085 $
   
