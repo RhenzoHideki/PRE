@@ -32,14 +32,14 @@ end
 while 1
 for m = 1 : length(t)
   grid on; hold on;
-  
+
   bar(x,pdfX_sim(:,m),'r')
   plot(x, pdfX_teo(:,m),'b','LineWidth',4)
   grid on;
   xlim([-0.2,1.2]); ylim([0,2]);
   title(sprintf("t = %.2f", t(m)));
   xlabel('x'); ylabel('f_{X(y)}(x)');
-  pause(0.05);
+  pause(0.15);
   clf
 end
 end
