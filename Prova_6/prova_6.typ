@@ -31,6 +31,7 @@ onde A e B são variáveis aleatórias independentes, ambas uniformemente distri
 
 (a) Determine e esboce três possíveis realizações (funções-amostra) do processo, à sua escolha.
 
+
 (b) Determine e esboce a função média de $X(t)$.
 
 (c) Determine a função autocovariância de $X(t)$.
@@ -39,12 +40,39 @@ onde A e B são variáveis aleatórias independentes, ambas uniformemente distri
 = Resolução
 == (a) Determine e esboce três possíveis realizações (funções-amostra) do processo, à sua escolha.
 
+#figure(
+  image("./Figuras/a0b0.svg",width:80%),
+);
+#figure(
+  image("./Figuras/a1b0.svg",width:80%),
+);
+#figure(
+  image("./Figuras/a1b1.svg",width:80%),
+);
 
+#pagebreak()
 
 
 == (b)  Determine e esboce a função média de $X(t)$.
+$
+mu_x (t) = E[x(t)]
 
+\ mu_x (t) = E[A "rect"(t-2) + B"rect"(t-3/2)]
 
+\ mu_x (t) = E[A "rect"(t-2)] + E[B"rect"(t-3/2)]
+
+\ mu_x (t) = "rect"(t-2) times E[A] + "rect"(t-3/2) times E[B]
+
+\ integral _0 ^4 a times 1/(4-0) dif a = 1/4 integral _0 ^4 a times dif a = 1/4 a^2 / 2 | _0 ^4 = (4^2 - 0^2)/8 = 16/8 = 2
+
+\ E[A] = E[B]
+
+\ mu_x (t) = 2[0<=t<=2]
+$
+
+#figure(
+  image("./Figuras/media.svg",width:80%),
+);
 
 
 == (c) Determine a função autocovariância de $X(t)$.
