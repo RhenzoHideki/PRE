@@ -76,3 +76,12 @@ $
 
 
 == (c) Determine a função autocovariância de $X(t)$.
+
+$
+\ C_x (t_1,t_2) = "cov"[ X(t_1) , X(t_2) ] 
+
+\ C_x (t_1,t_2) = "E"[ X(t_1) , X(t_2) ] -"E"[ X(t_1) ]"E"[ X(t_2) ]
+[]
+\ "E"[ X(t_1) , X(t_2) ] = "E"[(A "rect"(t-2) + B"rect"(t-3/2))times(A "rect"(t-2) + B"rect"(t-3/2))]
+\ "E"[ X(t_1) , X(t_2) ] = "E"[A^2 "rect"(t-2) + 2 A B w"rect"(t-3/2) "rect"(t-2) + B^2 "rect"(t-3/2)]
+$ 
