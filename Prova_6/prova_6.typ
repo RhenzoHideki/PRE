@@ -82,6 +82,20 @@ $
 
 \ C_x (t_1,t_2) = "E"[ X(t_1) , X(t_2) ] -"E"[ X(t_1) ]"E"[ X(t_2) ]
 []
-\ "E"[ X(t_1) , X(t_2) ] = "E"[(A "rect"(t-2) + B"rect"(t-3/2))times(A "rect"(t-2) + B"rect"(t-3/2))]
-\ "E"[ X(t_1) , X(t_2) ] = "E"[A^2 "rect"(t-2) + 2 A B w"rect"(t-3/2) "rect"(t-2) + B^2 "rect"(t-3/2)]
+\ "E"[ X(t_1) , X(t_2) ] = "E"[(A "rect"(t_1-2) + B"rect"(t_1 -3/2))times(A "rect"(t_2 -2) + B"rect"(t_2 -3/2))]
+\ "E"[ X(t_1) , X(t_2) ] = "E"[A^2]"rect"(t_1 -2)"rect"(t_2 -2) +  A B "rect"(t_1 -3/2) "rect"(t_2 -2)  \ + A B "rect"(t_1 -2) "rect"(t_2 -3/2)  + B^2 "rect"(t_1 -3/2)"rect"(t_2 -3/2)]
+
+\ "E"[ X(t_1) , X(t_2) ] = "E"[A^2] "rect"(t_1 -2)"rect"(t_ 2 -2) + E [A B]( "rect"(t_1-3/2) "rect"(t_2 -2) \ + "rect"(t_1 -2) "rect"(t_2 -3/2))  + "E"[B^2] "rect"(t_1-3/2)"rect"(t_2-3/2)
+
+\ "E"[A^2] = integral _ 0 ^ 4 a^2 times 1/(4-0) dif a = 1/4 integral _ 0 ^ 4 a^2 dif a = 
+1/4 a^3 /3 |_0 ^4 = 64/12 = 16/3
+\ "E"[B^2] = integral _ 0 ^ 4 b^2 times 1/(4-0) dif b = 1/4 integral _ 0 ^ 4 b^2 dif b = 
+1/4 b^3 /3 |_0 ^4 = 64/12 = 16/3
+\ "E"[A B] = integral _ 0 ^ 4 integral _ 0 ^ 4 b a times (1/(4-0)) ^2  dif a dif b = 1/16  integral _ 0 ^ 4 integral _ 0 ^ 4 b a dif a  dif b = 1/16 integral _ 0 ^ 4 b integral _ 0 ^ 4  a dif a  dif b = 1/16 integral _ 0 ^ 4 b (a^2 /2 |_0 ^4) dif b 
+\ = 1/16 integral _ 0 ^ 4 b ((4-0)^2 /2 ) dif b = 1/2  integral _ 0 ^ 4 b dif b = 1/2 b^2 /2 |_0 ^4 = 16/4 = 4 -> "E"[A B] = 4
+\ 
+"E"[ X(t_1) , X(t_2) ] = 16/3 ("rect"(t_1-2) "rect"(t_2-2) + "rect"(t_1-3/2)"rect"(t_2-3/2) ) \ + 4( "rect"(t_1-3/2) "rect"(t_2-2)  + "rect"(t_1-2) "rect"(t_2 -3/2))
+\ "E"[ X(t_1) ] = 2 "rect"((t_1 -2)/2)
+\ "E"[ X(t_21) ] = 2 "rect"((t_2 -2)/2)
+\ C_x (t_1,t_2) = 16/3 ("rect"(t_1-2) "rect"(t_2-2) + "rect"(t_1-3/2)"rect"(t_2-3/2) ) \ + 4( "rect"(t_1-3/2) "rect"(t_2-2)  + "rect"(t_1-2) "rect"(t_2-3/2)) - 4 ("rect"((t_1 -2)/2) "rect"((t_2 -2)/2))
 $ 

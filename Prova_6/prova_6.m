@@ -66,5 +66,5 @@ muX_teo = 2 * (0 <= t & t < 2);
 
 figure; grid on; hold on;
 plot(t, muX_sim, 'b', 'LineWidth', 4);
-%plot(t, muX_teo, 'b--', 'LineWidth', 2);
+plot(t, muX_teo, 'b--', 'LineWidth', 2);
 title('Função média'); xlabel('t'); ylabel('\mu_X(t)');
