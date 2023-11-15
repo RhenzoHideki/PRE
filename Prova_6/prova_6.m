@@ -7,14 +7,15 @@
 close all; clear all; clc;
 
 N = 10000;  % Número de experimentos probabilísticos
-dt = 0.02;  % Passo do tempo
+dt = 0.01;  % Passo do tempo
 t = -5: dt :5;
-t1 = t; t2 = t;
+t1 = t;
+t2 = t;
 Nt = length(t);
 
 
 %(a) Determine e esboce três possíveis realizações (funções-amostra) do processo, à sua escolha.
-
+% A = 0 e B = 0
 A0 = 0;
 B0 = 0;
 A0B0 = A0 * (0 <= t & t < 1) + ...
@@ -26,6 +27,8 @@ title('Função-Amostra A = 0, B = 0');
 xlabel('t'); ylabel('X(t)');
 ylim([0 1.2]);
 xlim([-0.5 4]);
+
+% A = 1 e B = 0
 
 A1 = 1;
 
@@ -39,6 +42,7 @@ ylim([0 1.2]);
 xlim([-0.5 4]);
 
 
+% A = 1 e B = 1
 
 B1 = 1;
 
