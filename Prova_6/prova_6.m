@@ -68,3 +68,25 @@ figure; grid on; hold on;
 plot(t, muX_sim, 'b', 'LineWidth', 4);
 plot(t, muX_teo, 'b--', 'LineWidth', 2);
 title('Função média'); xlabel('t'); ylabel('\mu_X(t)');
+
+
+% c) Função autocovariância
+
+CX_sim = cov(X, X);
+[T1, T2] = meshgrid(t1, t2);
+CX_teo = 16/3 .* ((0 <= T1 & T1 < 1) .* (0 <= T2 & T2 < 1)  + ...
+                  (1 <= T1 & T1 < 2) .* (1 <= T2 & T2 < 2)) + ...
+         4    .* ((0 <= T1 & T1 < 1) .* (1 <= T2 & T2 < 2)  + ...
+                  (1 <= T1 & T1 < 2) .* (0 <= T2 & T2 < 1)) - ...
+         4    .*  (0 <= T1 & T1 < 2) .* (0 <= T2 & T2 < 2);
+
+figure;
+subplot(1, 2, 1); grid on; hold on; view(30, 45);
+surf(t1, t2, CX_sim);
+shading flat;
+title('Função autocovariância (simulada)'); xlabel('t_1'); ylabel('t_2'); zlabel('C_X(t_1, t_2)');
+
+subplot(1, 2, 2); grid on; hold on; view(30, 45);
+surf(t1, t2, CX_teo);
+shading flat;
+title('Função autocovariância (teórica)'); xlabel('t_1'); ylabel('t_2'); zlabel('C_X(t_1, t_2)');
